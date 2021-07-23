@@ -112,6 +112,7 @@ export const handlers = [
   }),
   // Handles a GET /user request
   rest.get(`${urlBase}/colors`, (req, res, ctx) => {
+    console.log('here')
     if (authenticator(req)) {
       return res(
         ctx.status(200),
@@ -160,6 +161,8 @@ export const handlers = [
   }),
 
   rest.put(`${urlBase}/colors/:id`, (req, res, ctx) => {
+
+    console.log("req", req)
     if (authenticator(req)) {
       if (!req.params.id) {
         return res(
