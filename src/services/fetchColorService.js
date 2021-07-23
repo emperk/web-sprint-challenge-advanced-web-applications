@@ -15,7 +15,6 @@ export const editColorService = (editColor, colors, setColors, setError) => {
   axiosWithAuth().put(`http://localhost:5000/api/colors/${editColor.id}`, editColor)
       .then(res => {
         const filteredColors = colors.filter(color => color.id !== res.data.id)
-        console.log('res.data', res.data)
         setColors([...filteredColors, res.data])
       })
       .catch(err => {
@@ -24,10 +23,11 @@ export const editColorService = (editColor, colors, setColors, setError) => {
 }
 
 
-export const deleteColorService = (id, setColors, setError) =>
-axiosWithAuth().put(`http://localhost:5000/api/colors/${id}`)
+export const deleteColorService = (colorToDelete, colors, setColors, setError) =>
+axiosWithAuth().delete(`http://localhost:5000/api/colors/${colorToDelete.id}`)
     .then(res => {
-      setColors(res.data)
+      const filteredColors = colors.filter(color => +color.id !== +res.data)
+      setColors(filteredColors)
     })
     .catch(err => {
       setError('colors not removed')

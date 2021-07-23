@@ -21,8 +21,7 @@ const BubblePage = () => {
 
   const saveEdit = (editColor) => editColorService(editColor, colors, setColors, setError)
 
-  const deleteColor = (colorToDelete) => {
-  };
+  const deleteColor = (colorToDelete) => deleteColorService(colorToDelete, colors, setColors, setError)
 
   if(error) return null;
 
