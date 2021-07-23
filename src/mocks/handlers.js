@@ -95,6 +95,7 @@ const urlBase = 'http://localhost:5000/api';
 export const handlers = [
   // Handles a POST /login request
   rest.post(`${urlBase}/login`, (req, res, ctx) => {
+    console.log('req.body', req.body)
     const { username, password } = req.body;
     if (username === "Lambda" && password === "School") {
       return res(
@@ -120,6 +121,20 @@ export const handlers = [
       res(
         ctx.status(403),
         ctx.json({ error: "User must be logged in to do that." })
+      )
+    }
+  }),
+
+  rest.get(`${urlBase}/logout`, (req, res, ctx) => {
+    if (authenticator(req)) {
+      return res(
+        ctx.status(200),
+        ctx.json(colors)
+      );
+    } else {
+      res(
+        ctx.status(403),
+        ctx.json({ error: "User can't logout" })
       )
     }
   }),
