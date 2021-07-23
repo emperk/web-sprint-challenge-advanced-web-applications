@@ -170,7 +170,7 @@ export const handlers = [
           ctx.json("Your request is missing the color id")
         );
       }
-
+      
       if (req.body.id === undefined || !req.body.color || !req.body.code) {
         return res(
           ctx.status(422),
