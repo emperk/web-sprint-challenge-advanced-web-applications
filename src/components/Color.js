@@ -18,11 +18,11 @@ const Color = (props) => {
 
         <span>
             <span className="delete" data-testid="delete" onClick={handleDelete}>x</span>
-            {` ${color.color}`}
+            {` ${color?.color}`}
         </span>
         <div 
             className="color-box"
-            style={{ backgroundColor: color.code.hex }}
+            style={{ backgroundColor: color?.code.hex }}
         />
     </li>);
 }

@@ -54,8 +54,8 @@ Your finished project must include all of the following requirements. **Unlike o
 
 * [X] In `services/fetchColorServices.js`, build out fetchColorService function to make a GET request to fetch the color data for your bubbles.
 * [X] When `BubblePages` mounts, call fetchColorServices and save it's result in state.
-* [ ] In `BubblePage.js`, complete `saveEdit`, and `deleteColor` functions to make API requests for to editing and delete data.
-* [ ] Watch and enjoy as your app responds to updates in the data. Check out `Bubbles.js` to see how this is built.
+* [X] In `BubblePage.js`, complete `saveEdit`, and `deleteColor` functions to make API requests for to editing and delete data.
+* [X] Watch and enjoy as your app responds to updates in the data. Check out `Bubbles.js` to see how this is built.
 
 #### Testing
 * [ ] Finish the test in `Color.test.js`, `ColorList.test.js`, `BubblePage.test.js`. You will need to use rerendering, function mocking and spies in order to complete.
@@ -105,6 +105,15 @@ These goals may or may not be things you have learned in this module but they bu
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. Add your answers to the questions within `interview_answers.md` file. These will not be counted as a part of your sprint score but will be helpful for preparing you for your endorsement interview, and enhancing overall understanding.
 
 1. Explain what a token is used for.
+  ANSWER: A token is an authorization key returned to demonstrate that a user is authenticated to use the requested api. 
 2. What steps can you take in your web apps to keep your data secure?
+  ANSWER: Protect routes with authentication - both frontend and backend. API routes should require an authentication token. Frontend routes should be private requiring a token as well.
+
 3. Describe how web servers work.
+ANSWER: The web server is comprised of a series of url defined routes that return data specific to the request type. The request types are usually GET, POST, PUT, DELETE and essentially allow the request user to get a response of data.
+
 4. Which HTTP methods can be mapped to the CRUD acronym that we use when interfacing with APIs/Servers.
+GET: read
+POST: create
+PUT: update
+DELETE: delete
