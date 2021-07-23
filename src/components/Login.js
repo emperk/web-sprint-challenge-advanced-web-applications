@@ -11,7 +11,7 @@ const Login = () => {
     <div>
       <h1>Welcome to the Bubble App!</h1>
       <div data-testid="loginForm" className="login-form">
-        <h2>Build login form here</h2>
+        <h2>Put Login Form Here</h2>
       </div>
 
       <p data-testid="errorMessage" className="error">{error}</p>
